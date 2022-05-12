@@ -109,7 +109,7 @@ public class Tetris extends JPanel {
                         rotateRightActive();
                         break;
                     case KeyEvent.VK_SPACE:
-                        hadnDropActive();
+                            hadnDropActive();
                         break;
                     case KeyEvent.VK_P:
                         //判断当前游戏状态
@@ -245,14 +245,14 @@ public class Tetris extends JPanel {
             int row = cell.getRow();
             if (isFullLine(row)) {
                 line++;
-                for (int i = 0; i > 0; i--) {
+                for (int i = row; i > 0; i--) {
                     System.arraycopy(wall[i - 1], 0, wall[i], 0, wall[0].length);
                 }
                 wall[0] = new Cell[9];
             }
         }
         //分数池获取分数，累加到总分
-        totalScore = scores_pool[line];
+        totalScore += scores_pool[line];
         //总行数
         totalLine += line;
     }
@@ -340,7 +340,7 @@ public class Tetris extends JPanel {
         for (Cell cell : cells) {
             int col = cell.getCol();
             int row = cell.getRow();
-            if (row < 0 || row > wall.length - 1 || col < 0 || col > wall[0].length) {
+            if (row < 0 || row > wall.length - 1 || col < 0 || col > wall[0].length-1) {
                 return true;
             }
         }
