@@ -1,4 +1,4 @@
-package com.zhao.demo;
+package com.zhao.demo.block;
 
 import java.awt.image.BufferedImage;
 import java.util.Objects;
@@ -11,8 +11,9 @@ import java.util.Objects;
  *   方法： 左移、右移、下落
  */
 public class Cell {
-
+    // 行
     private int row;
+    // 列
     private int col;
     private BufferedImage image;
 
@@ -79,17 +80,17 @@ public class Cell {
     }
 
     //左移动一格
-    private void left(){
+    public void left(){
         col--;
     }
 
     //右移动一格
-    private void right(){
+    public void right(){
         col++;
     }
 
     //下移动一格
-    private void down(){
+    public void down(){
         row++;
     }
 }
